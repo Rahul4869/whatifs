@@ -48,11 +48,11 @@ def generate_audio_beats(script_data, workspace_dir):
         out_file = os.path.join(workspace_dir, f"beat_{beat_num}.mp3")
         print(f"Synthesizing Beat {beat_num}...")
         
-        # Using Microsoft's Neural API for high-fidelity documentary voiceover
+        # FIXED: Combine --rate and value to prevent CLI parser confusion
         tts_cmd = [
             "edge-tts",
             "--voice", "en-US-ChristopherNeural",
-            "--rate", "-5%", # Slowed slightly for dramatic pacing
+            "--rate=-5%",
             "--text", text,
             "--write-media", out_file
         ]
