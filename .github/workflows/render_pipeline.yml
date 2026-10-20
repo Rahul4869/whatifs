@@ -26,8 +26,7 @@ jobs:
 
       - name: Install Python Dependencies
         run: |
-          pip install requests google-api-python-client google-auth-oauthlib google-auth-httplib2 Pillow
-
+          pip install requests google-api-python-client google-auth-oauthlib google-auth-httplib2 Pillow edge-tts
       - name: Execute Render Engine
         env:
           WEBAPP_URL: ${{ secrets.WEBAPP_URL }}
